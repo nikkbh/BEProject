@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1076,1013.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,1146.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -57,7 +57,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -98,6 +98,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416.8,1081.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -149,7 +150,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="924,625.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="660.8,625.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
               </Sequence.Variables>
@@ -158,7 +159,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[PlacedStudentsDT]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="882.4,52.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="GRNumbers" LookupValue="[row(&quot;GRNumbers&quot;).ToString]" RowIndex="[rowIndex]">
+              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[PlacedStudentsDT]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="619.2,52.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="GRNumbers" LookupValue="[row(&quot;GRNumbers&quot;).ToString]" RowIndex="[rowIndex]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -166,9 +167,9 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LookupDataTable>
-              <If Condition="[rowIndex &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="882.4,440" sap2010:WorkflowViewState.IdRef="If_4">
+              <If Condition="[rowIndex &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="619.2,440" sap2010:WorkflowViewState.IdRef="If_4">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="419.2,84.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,13 +178,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="419.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[appliedDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="377.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[row.ItemArray]" DataTable="[appliedDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                   </Sequence>
                 </If.Else>
               </If>
@@ -291,7 +292,7 @@
           </Sequence>
         </ui:CommentOut.Body>
       </ui:CommentOut>
-      <If Condition="[FinalDT.Rows.Count &lt;&gt; 0]" sap:VirtualizedContainerService.HintSize="483.2,388" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[FinalDT.Rows.Count &lt;&gt; 0]" sap:VirtualizedContainerService.HintSize="483.2,397.6" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <Sequence sap:VirtualizedContainerService.HintSize="375.2,208.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
@@ -348,12 +349,10 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFrWn1Gl8Hkip2Ws7FlBrNwAAAAACAAAAAAAQZgAAAAEAACAAAAAMWrQUibsAyL3Z6UOrgmej09TO0nzoanRgcNkTz6rMtAAAAAAOgAAAAAIAACAAAACMgAqQ8l7B2mdEFZGlh0z3ZUWkHlYk0w/z7S99Ly2O4BAAAABigkSQk1rYansMzo1ES3nrQAAAAD5O8VEhDOFdMIJ6nm/LzvXT6vl/cu74uY36Ip9FYsB0jF7Bhyg8p7d19WxubfqZjfnbT+UpGs8fsTMfjvfabNk=" Result="[PwD]" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[metaDataDT.Rows(0)(6).ToString]" />
-      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Please find attached excel file containing the students and their data registered for &quot; + metaDataDT.Rows(0)(0).ToString + &quot; Placement drive.&quot;]" DisplayName="Send SMTP Mail Message" Email="test.server.7411@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[PwD]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;List of registered students for &quot; + metaDataDT.Rows(0)(0).ToString + &quot; Placement&quot;]" To="amit.21810714@viit.ac.in">
+      <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Please find attached excel file containing the students and their data registered for &quot; + metaDataDT.Rows(0)(0).ToString + &quot;Placement drive.&quot;]" DisplayName="Send SMTP Mail Message" Email="test.server.7411@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[PwD]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;List of registered students for &quot; + metaDataDT.Rows(0)(0).ToString + &quot; Placement&quot;]" To="[metaDataDT.Rows(0)(6).ToString]">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-            <InArgument x:TypeArguments="x:String">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;outputFinalShortlistPath&quot;).ToString + in_TransactionItem(&quot;Companies&quot;).ToString + &quot;.xlsx&quot;" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String">[in_Config("outputFinalShortlistPath").ToString + in_TransactionItem("Companies").ToString + ".xlsx"]</InArgument>
           </scg:List>
         </ui:SendMail.Files>
       </ui:SendMail>
